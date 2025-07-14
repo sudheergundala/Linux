@@ -6,13 +6,21 @@ Directory structure in Linux
 
 Linux Essential Commands:
   i. Navigating the FileSystem.
+
   ii. File Operations.
+
   iii. File Permissions.
+
   iv. View and Edit Files.
+
   v. Process Management.
+
   vi. Text Manipulation.
+
   vii. Input/Output redirections.
+
   viii. Web Requests.
+  
 
 
   i. Navigating the FileSystem:-
