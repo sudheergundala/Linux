@@ -1,0 +1,33 @@
+Linux is a multi user operating system, where multiple users can work simutaniously. Every user has thier own account, home directory and also set of permissions to perform the operations.
+In linux, there are 3 types of users.
+  1. Super User (root) -- Has Administrative provilages and can do anything in the system. 
+  2. Normal User -- Created by the administrator according to the requirment. Has least privilages.
+  3. System User.  -- created by system
+
+These users have the IDs in the below range.
+   1. Root User -- UID - 0
+   2. Normal Users -- UID - 1000 +
+   3. System Users -- UID - 1 - 999
+
+These ranges are defined in /etc/login.defs. if you want to change any of the min and max values of of the above users you can do in here.
+
+3 important configuration files for users and groups are
+   1. /etc/passwd  --- stores user account info(user name. userid, groupid, home directory,shell)
+   2. /etc/shadow --- stores encrypted passwords.
+   3. /etc/group  --- stores group info.
+
+User Management commands:
+
+  1. adduser/useradd --  this will create the user.
+        adduser -- this is more user interactive command. Here it will create the user's home directory and copies default config files from /etc/skel.
+                   ii. This will prompt to create the password, full name etc.
+                   iii. It is by default available in debian distributions.
+        useradd -- this is a low level command that directly interacts with /etc/passwd and /etc/shadow, where it will just create the user.
+                   ii. Here we need to create the user's home directory by using mkdir or -m option while using the useradd command (useradd -m john).
+                   iii. we also need to create the password explicitly (passwd john).
+                   iv. It is available on all the linux distributions.
+                   v. It is best for scripting and automation.
+
+    2. 
+
+

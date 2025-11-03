@@ -1,0 +1,9 @@
+CD --- Change Directory.
+
+        cd /var/log  -- it is an absolute path. it will change to /var/log directory.
+
+        cd .. -- it will move up one level i.e /var.
+
+        cd ../.. --- it will move up two levels.
+
+        cd ~ --- it will take you to the home directory.

@@ -1,0 +1,49 @@
+sed -- Stream editor
+   It edits text line by line as it flows through a Stream
+   it works without opening the file in an editor
+
+Basic Syntax:-
+   sed [options] command file
+
+
+sed 's/linux/unix/' file.txt  --- This will replace the first linux to unix per line.  it is a case sensitive. here it will just display the change to the output but not in the file.
+
+sed 's/linux/unix/g' file.txt --- this will replace all the instance of linux to unix in the file. 
+
+sed -i 's/linux/unix/g' file.txt --- this will change the linux to unix directly inside the file. here it will directly change the file. so before performing this take the backup by using below command.
+   sed -i.bak 's/linux/unix/g' file.txt -- this make the changes to the file directly and also take the file backup i.e file.txt.bak
+
+sed -n '3p' file.txt --- this command will print line 3 as the output from the file.
+  by default sed command will print all the file lines as output. so to suppress automatic printing we will use -n.
+
+sed -n '2,4p' file.txt --- this command will print lines 2 to 4 as output from the file.
+
+sed -n '/linux/p' file.txt --- this command will print all the lines which have linux as output.
+
+sed -n '3d' file.txt --- this command will delete line 3 from the file.
+
+sed -n '/linux/d' file.txt -- this command will delete the lines which contains linux.
+
+sed '/^$/d' file.txt --- this command will delete the empty lines in the file.
+    ^ -- starting of the line
+    $ -- ending of the line.
+  ex: sed '/^s.*R$/d' file.txt --- this command will delete the line which start with s character and ends with R character.
+
+sed '2i\--inster before line2--' file.txt -- this command will insert the given line before the line2 in the file output.
+
+sed '2a\--append this at line2--' file.txt --- this command will append the given line at the end of line2.
+
+sed '3c\this is the new line 3' file.txt -- this command will change/replace the line 3 in the file output.
+
+sed 'y/abc/ABC/' file.txt -- this command will transform a->A , b->B, c->C from the file output.
+
+sed '/linux/a\is powerfull' file.txt -- this command will add the text mentioned after every linux in the file output.
+
+sed -e 's/linux/unix/' file.txt -e 's/foo/FOO/g' file.txt -- by using -e option we can use multiple commands at once.
+
+sed -n '/linux/=' file.txt --- this will print the line number where the linux is there.
+
+sed 3q file.txt -- this command will quit the output after printing the 3 lines.
+
+
+

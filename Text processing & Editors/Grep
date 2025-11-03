@@ -1,0 +1,42 @@
+Grep -- Grep is used to search the text patterns inside the file.
+grep (Globally search for Regular Expression and Print)
+
+Basic syntax:
+  grep [optons] pattern [filename/s]
+
+pattern - what you wan to search
+filename - search from file or files
+
+grep "error" log.txt --- this search for all the lines containing "error" in the log.txt file 
+
+grep -i "error" log.txt --- the option -i is used to ignore the case i.e it will look for both upper case and lower case "error".
+
+grep -v "error" log.txt --- the -v option is used to invert match the search i.e all the lines which dont have "error" in it will get printed.
+
+grep -w "error" log.txt -- the -w option is used to search for the matching whole word.
+example : grep -w "cat" log.txt -- here it will search for the word cat but not concatenate.
+
+grep -x "this line" log.txt --- the -x option is used to find the matching line. i.e the line only has this line in it.
+
+grep -r "error" /var/log -- this will search for the string "error" in all the files inder the /var/log
+
+grep -r "error" . --exclude="*.log" -- this will search for the string "error" in all the files excluding .log files under current directory.
+
+grep -r "error" . --include="*.log" -- this will search only in "*.log" file under the current directory.
+
+grep -r "error" /etc --exclude-dir=ssh --- this will search the pattern under the /etc directory excluding ssh directory.
+
+grep -c "error" log.txt -- the option -c will count how many time the "error" is in log.txt
+
+grep -n "error" log.txt -- the option -n will show the line number where the pattern "error" is matched in the log.txt
+
+grep -l "error" "*.txt" --- the option -l will find all the file names which has the pattern "error" in it.
+
+grep -o "error" log.txt -- this will print only the matched pattern "error" nothing more than that. Also it will print the pattern in new line if there are 2 of them in the single line.
+
+grep -L "error" "*.txt" -- this will print only the file names which dont have any "error" in the file.
+
+grep -A N / -B N / -C N "error" ".log" -- this will print the After , Before lines of specified lines.
+     -A N --- After N line of the pattern matched.
+     -B N --- Before N lines of the pattern matched.
+     -C N -- before and After N lines on the pattern matched.

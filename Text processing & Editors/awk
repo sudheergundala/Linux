@@ -1,0 +1,32 @@
+awk ---- it is a field based text processor. 
+
+syntax:
+
+   awk [options] 'pattern {action}' file.text.  -- here pattern is what we are looing for and action is what we need to do if it matches.
+
+awk '{print}' file.txt -- this command will print all the file like cat.
+
+awk '{print $1}' file.txt -- this will print the first column for the file.txt
+
+awk '{print $1, $3}' file.txt -- this will print the first and third column of the file.txt
+
+awk '{print NR , $0}' fil .txt -- this will print the line numbers to the lines present in the file while printing the output.
+    NR -- number of records. the current line starts with 1.
+    , -- default seperator which is space.
+    $0 -- represents the entire line.
+
+awk '$3 > 25 {print $1 $2}' file.txt --- this will check the 3rd column or filed and compare the value with 25. if the value is more than 25 then it will print filed 1 and 2.
+
+awk '$4 == "manager" {print $1 $2}' file.txt -- this will check the filed 4 if it is manager then it will print filed 1 and 2.
+
+awk -F',' '{print $1 $2}' file.txt --- in this command -F option tells the awk program that the seperator between the fileds in the input file is comma(,). by default it is space or tab. so here we are explicitly telling it that it is a comma.
+
+awk -F',' 'BEGIN {OFS=" , "} {print $1 , $2}' file.txt ---- in this command , BEGIN block run before the awk read the file.
+   OFS(output filed seperator) -- this will tel the awk program that the output should be printed with the specified seperator i.e comma(,) here. by default it is a space.
+
+awk 'BEGIN {print "this is starting} {print} END {print "this is end"}' file.txt -- this command will print the line this is starting at the begining of the output(using the begin block) and this is end will print at the end of the output(using the END block).
+
+awk '/DEV/ {print $1}' file.txt --- this will print the fields containing DEV.
+
+awk '{sum += $2} END {print "average:", sum/NR }' file.txt --- this will add all the values of the 2 field and at the end it will calucalate the average of it by dividing with the number of line (NR).
+

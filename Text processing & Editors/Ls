@@ -1,0 +1,15 @@
+ls --- list directories/files.
+
+       ls -l  -- list directory/file in a long format (Size,date,Permission).
+
+       ls -t -- list directory/file by sorting the modification time.
+
+       ls -a -- list all the directories along with the hidden files.
+
+       ls -lh -- Human readable format.
+
+       ls -R -- Recursive listing. Which will show all the files in each of the directories in that particular directory.
+
+       ls -S -- sorts the listing of directories/files according to the size. Largest size at first.
+
+       ls -r -- display the list in reverse order. we can use this combination of reversing with other option like -t, -S.
